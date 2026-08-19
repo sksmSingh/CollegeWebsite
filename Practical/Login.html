@@ -2,21 +2,58 @@
 <head>
     <title>Login</title>
 </head>
+
 <body>
-    <center>
 
-    <br><br><h2>Login Page</h2>
+<center>
 
-    <form action="index.html">
+    <br><br><br>
+
+    <h2>Login Page</h2>
+
+    <form onsubmit="return validateLogin()">
+
         <label>Username:</label><br>
-        <input type="text" placeholder="Enter username" required><br><br>
+        <input type="text" id="username" placeholder="Enter username" required>
+        <br><br>
 
         <label>Password:</label><br>
-        <input type="password" placeholder="Enter password" required><br><br>
+        <input type="password" id="password" placeholder="Enter password" required>
+        <br><br>
 
         <button type="submit">Login</button>
+
     </form>
-    </center>
+
+</center>
+
+<script>
+function validateLogin() {
+
+    let usernameInput = document.getElementById("username").value;
+    let correctusername = "sksm";
+
+
+    let passwordInput = document.getElementById("password").value;
+    let correctPassword = "sksm123";
+
+    if (usernameInput === correctusername && passwordInput === correctPassword) {
+
+        alert("Login successful!");
+
+        window.location.href = "index.html";
+
+        return false;
+
+    } else {
+
+        alert("Incorrect username or password. Please try again.");
+
+        return false;
+    }
+
+}
+</script>
 
 </body>
 </html>
