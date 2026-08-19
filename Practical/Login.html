@@ -1,59 +1,99 @@
 <html>
+
 <head>
-    <title>Login</title>
+    <title>Login - Random College</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<center>
+    <div class="login-page">
 
-    <br><br><br>
+        <div class="login-box">
 
-    <h2>Login Page</h2>
+            <h1>Random College</h1>
 
-    <form onsubmit="return validateLogin()">
+            <h2>Student Login</h2>
 
-        <label>Username:</label><br>
-        <input type="text" id="username" placeholder="Enter username" required>
-        <br><br>
+            <p>
+                Welcome back! Please enter your details
+                to access your student account.
+            </p>
 
-        <label>Password:</label><br>
-        <input type="password" id="password" placeholder="Enter password" required>
-        <br><br>
+            <hr>
 
-        <button type="submit">Login</button>
+            <form onsubmit="return validateLogin()">
 
-    </form>
+                <label><b>Username</b></label>
+                <br>
 
-</center>
+                <input type="text"
+                       id="username"
+                       placeholder="Enter your username"
+                       required>
 
-<script>
-function validateLogin() {
+                <br><br>
 
-    let usernameInput = document.getElementById("username").value;
-    let correctusername = "sksm";
+                <label><b>Password</b></label>
+                <br>
+
+                <input type="password"
+                       id="password"
+                       placeholder="Enter your password"
+                       required>
+
+                <br><br>
+
+                <button type="submit">Login</button>
+
+            </form>
+
+            <p class="login-note">
+                Students can use their registered college
+                credentials to access their account.
+            </p>
+
+        </div>
+
+    </div>
 
 
-    let passwordInput = document.getElementById("password").value;
-    let correctPassword = "sksm123";
+    <script>
 
-    if (usernameInput === correctusername && passwordInput === correctPassword) {
+        function validateLogin() {
 
-        alert("Login successful!");
+            let usernameInput =
+                document.getElementById("username").value;
 
-        window.location.href = "index.html";
+            let correctusername = "sksm";
 
-        return false;
 
-    } else {
+            let passwordInput =
+                document.getElementById("password").value;
 
-        alert("Incorrect username or password. Please try again.");
+            let correctPassword = "sksm123";
 
-        return false;
-    }
 
-}
-</script>
+            if (usernameInput === correctusername &&
+                passwordInput === correctPassword) {
+
+                alert("Login successful!");
+
+                window.location.href = "index.html";
+
+                return false;
+
+            } else {
+
+                alert("Incorrect username or password. Please try again.");
+
+                return false;
+            }
+
+        }
+
+    </script>
 
 </body>
+
 </html>
